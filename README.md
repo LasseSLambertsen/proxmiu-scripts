@@ -23,9 +23,13 @@ Proxmiu turns each option into an `OPT_<KEY>` environment variable for the scrip
 
 ## Helpers available to scripts
 
-Proxmiu prepends its own base setup before every install script and appends the optional extras after it. The files in `lib/` are reference copies of that base setup; the agent uses the versions shipped with Proxmiu. The scripts here should not source them again when used through Proxmiu.
+Proxmiu prepends its own base setup before every install script and appends the optional extras after it. The files in `lib/` are reference copies of that base setup (`helpers.sh` and `prelude.sh`) and the extras (`epilogue.sh`); the agent uses the versions shipped with Proxmiu. The scripts here should not source them again when used through Proxmiu.
 
 Available helpers: `log`, `retry`, `apt_install`, `as_user`, `as_user_sh`, `persist_env`, `install_node`.
+
+## Updates
+
+Proxmiu can update a guest created from one of these scripts from its **Update…** menu. It re-fetches the script from this repository and runs it again, so the scripts should stay idempotent. Updates do not repeat the base setup or the optional extras.
 
 ## Safety
 
