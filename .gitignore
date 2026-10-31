@@ -1,0 +1,10 @@
+.env
+.env.*
+*.log
+data/
+dist/
+node_modules/
+*.key
+*.pem
+id_rsa
+id_ed25519
